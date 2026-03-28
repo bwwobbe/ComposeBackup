@@ -7,6 +7,9 @@ public class Program
         var builder = Host.CreateApplicationBuilder(args);
         builder.Services.AddHostedService<Worker>();
 
+        builder.Services.Configure<Settings>(
+            builder.Configuration.GetSection("Settings"));
+
         var host = builder.Build();
         host.Run();
     }
