@@ -7,6 +7,7 @@ public class Program
         var builder = Host.CreateApplicationBuilder(args);
         builder.Services.AddHostedService<Worker>();
 
+        builder.Configuration.SetBasePath("/config");
         builder.Services.Configure<Settings>(
             builder.Configuration.GetSection("Settings"));
 
