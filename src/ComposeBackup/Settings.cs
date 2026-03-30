@@ -4,6 +4,9 @@ namespace ComposeBackup;
 
 public class Settings
 {
+    public int BatchMinutes;
+    public string ComposeDirectory { get; init; } = string.Empty;
+    public bool DryRun { get; init; }
     public Dictionary<string, Entry> Backups { get; set; } = [];
 }
 
